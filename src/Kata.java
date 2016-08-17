@@ -132,14 +132,16 @@ public class Kata {
         HashMap<Character, ArrayList<String>> newMap = new HashMap<>();
 
         for(String item : data){
-            char firstLetter = item.charAt(0);
+            if (item.length() != 0) {
+                char firstLetter = item.charAt(0);
 
-            if(!newMap.containsKey(firstLetter)){
-                newMap.put(firstLetter, new ArrayList<>());
+
+                if (!newMap.containsKey(firstLetter)) {
+                    newMap.put(firstLetter, new ArrayList<>());
+                }
+                ArrayList<String> itemList = newMap.get(firstLetter);
+                itemList.add(item);
             }
-            ArrayList<String > itemList = newMap.get(firstLetter);
-            itemList.add(item);
-
         }
         return newMap;
 
