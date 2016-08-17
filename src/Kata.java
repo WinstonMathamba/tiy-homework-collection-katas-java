@@ -6,6 +6,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 
 
 public class Kata {
@@ -83,8 +84,8 @@ public class Kata {
     }
 
 /**Map Share - Modify and return the given HashMap as follows:
-*if the key "a" has a value, set the key "b" to have that same value.
-*In all cases remove the key "c", leaving the rest of the map unchanged.*/
+ *if the key "a" has a value, set the key "b" to have that same value.
+ *In all cases remove the key "c", leaving the rest of the map unchanged.*/
 
     public static HashMap<String, String> mapShare(HashMap<String, String> data) {
         if (data.containsKey("a")) {
@@ -94,17 +95,36 @@ public class Kata {
         return data;
     }
 
-/** Map AB - Modify and return the given HashMap as follows: for this problem the
+/**Map AB - Modify and return the given HashMap as follows: for this problem the
  *HashMap may or may not contain the "a" and "b" keys. If both keys are present,
  *append their 2 string values together and store the result under the key "ab" */
 
     public static HashMap<String, String> mapAB(HashMap<String, String> data) {
         if(data.containsKey("a") && data.containsKey("b")) {
-            HashMap<String> absmoosh = data.get("a"), data.get("b");
-            data.put("ab",);
-
+            String a = data.get("a");
+            String b = data.get("b");
+           data.put("AB",a + b);
         }
+        return data;
     }
 
+/**Word Length - Given an ArrayList of strings, return a HashMap containing a
+ *key for every different string in the ArrayList, and the value is that string's length.*/
+
+    public static HashMap<String, Integer> wordLength(ArrayList<String> data) {
+        HashMap<String, Integer> deDuped = new HashMap<>(String, Integer);
+
+        for(String item : data){
+            if(!deDuped.containsKey(item)){
+                deDuped.put(item, 1);
+            }else {
+                deDuped.put(item, deDuped.get(item) +1);
+
+            }
+
+        }return deDuped;
+
+
+    }
 
 }
