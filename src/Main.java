@@ -295,7 +295,40 @@ public class Main {
 //Example of Word Length
         ArrayList<String> letters = new ArrayList<>();
         letters.addAll(Arrays.asList("a", "bb", "a", "bb"));
-        System.out.print(Kata.wordLength(letters));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+
+        letters.clear();
+        letters.addAll(Arrays.asList("this", "and", "that", "and"));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+
+        letters.clear();
+        letters.addAll(Arrays.asList("code", "code", "code", "bug"));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+
+        letters.clear();
+        letters.addAll(Arrays.asList("fifth", "tri", "tri", "fifth","cheese"));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+
+        letters.clear();
+        letters.addAll(Arrays.asList("free", "tiki", "tiki", "key"));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+
+        letters.clear();
+        letters.addAll(Arrays.asList("sorely", "magnanimous", "magnanimous", "bee"));
+        System.out.printf("Kata for Word Length %s ", letters);
+        System.out.printf(" --> %s\n", Kata.wordLength(letters));
+        System.out.println();
+
+        ArrayList<String> words = new ArrayList<>();
+        words.addAll(Arrays.asList("aardvark", "apple", "zamboni", "phone"));
+        System.out.printf("Kata for Index Words %s ", words);
+        System.out.printf(" --> %s\n", Kata.indexWords(words));
+
 
     }
 }

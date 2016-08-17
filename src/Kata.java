@@ -6,7 +6,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 
 public class Kata {
@@ -112,18 +111,37 @@ public class Kata {
  *key for every different string in the ArrayList, and the value is that string's length.*/
 
     public static HashMap<String, Integer> wordLength(ArrayList<String> data) {
-        HashMap<String, Integer> deDuped = new HashMap<>(String, Integer);
+        HashMap<String, Integer> deDuped = new HashMap<>();
 
         for(String item : data){
             if(!deDuped.containsKey(item)){
-                deDuped.put(item, 1);
-            }else {
-                deDuped.put(item, deDuped.get(item) +1);
-
+                deDuped.put(item, item.length());
             }
 
-        }return deDuped;
+        }
+        return deDuped;
+    }
 
+/** Index Words - Given an ArrayList of words, return a HashMap> containing a keys
+ *for every word's first letter. The value for the key will be an ArrayList of all words
+ *in the list that start with that letter. An empty string has no first
+ *letter so don't add a key for it. */
+
+    public static HashMap<Character, ArrayList<String>> indexWords(ArrayList<String> data) {
+
+        HashMap<Character, ArrayList<String>> newMap = new HashMap<>();
+
+        for(String item : data){
+            char firstLetter = item.charAt(0);
+
+            if(!newMap.containsKey(firstLetter)){
+                newMap.put(firstLetter, new ArrayList<>());
+            }
+            ArrayList<String > itemList = newMap.get(firstLetter);
+            itemList.add(item);
+
+        }
+        return newMap;
 
     }
 
